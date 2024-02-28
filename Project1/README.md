@@ -1,38 +1,24 @@
-# Project Name
-
-Brief description or overview of your project.
-
-## Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Hosted Version](#hosted-version)
+# Background Color Changer Using JavaScript
 
 ## About
-
-Describe your project in more detail here. What problem does it solve? What technologies does it use?
+This project is a simple web application that allows users to change the background color of a target div element. It demonstrates basic DOM manipulation using JavaScript.
 
 ## Features
 
-- Feature 1
-- Feature 2
-- ...
+- Change the background color of the target div element to yellow.
+- Add a margin of 20 pixels to the element.
+- Apply a padding of 10 pixels to the element.
+- Change the font size to 18 pixels.
+- Set the font weight to bold.
+- Change the height of the element to 200 pixels.
+- Modify the width of the element to 300 pixels.
 
 ## Demo
+![alt text](image.png)
 
-Include a link to a live demo of your project if available. You can also include screenshots or gifs to showcase the functionality.
+## Tech used 
+- HTML 
+- CSS 
+- JavaScript
 
-## Installation
-
-Provide instructions on how to install and set up your project locally. Include any dependencies that need to be installed and how to install them.
-
-```bash
-# Example installation steps
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
-npm install
+[Hosted Link](https://anupamyadav01.github.io/module-4-JS/Project1/index.html)
