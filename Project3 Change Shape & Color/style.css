@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+#shape {
+  --shape: 50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%;
+  height: 100px;
+  width: 100px;
+  background-color: rgb(255, 255, 255);
+  clip-path: polygon(var(--shape));
+}
+.btn {
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
