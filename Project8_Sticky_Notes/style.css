@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+.container{
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.content{
+    height: 100%;
+    display: flex;
+    border: 2px solid #000;
+    
+}
+.main-heading{
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+#left-container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffb703;
+}
+#right-container{
+    width: 60%;
+    height: 100%;
+    background-color: #ffb703;
+    color: white;
+    text-align: center;
+}
+.textarea-and-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px
+}
+#textarea{
+    background-color: black;
+    padding: 10px 16px;
+    width: 60%;
+    border-radius: 5px;
+    resize: none;
+    font-size: 1.1rem;
+    color: white;
+    outline: none;
+}
+.add-notes-btn{
+    padding: 0.5rem 1rem;
+    margin-top: 3rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    left: -3rem;
+    cursor: pointer;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.inner-box{
+    padding-block: 1rem;
+    margin: 0px auto;
+    width: 90%;
+    height:90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.childDiv{
+    border: 2px solid yellow;
+    width: 200px;
+    height: 150px;
+    position: relative;
+    font-size: 0.9rem;
+    overflow: hidden;
+    border-radius: 4px;
+    padding-block: 5px;
+}
+.crossBtn{
+    display: block;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    left: 35%;
+    cursor: pointer;
+    border-radius: 3px;
+}
