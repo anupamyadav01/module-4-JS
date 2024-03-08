@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sticky Notes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+  </head>
 
-</head> 
-
-<body>
+  <body>
     <div class="container">
-        <h1 class="main-heading">Welcome to Sticky notes app</h1>
-        <div class="content">
-            <div id="left-container">dfsdfsdfhjhjjhjhghggh
-                <div class="textarea-and-color">
-                    <textarea id="textarea" cols="45" rows="8" placeholder="Add your notes here..."></textarea>
-                    <input type="color" id="color-picker">
-                </div>
-                <button class="add-notes-btn">Add Notes</button>
-            </div>
-            <div id="right-container">
-                <h1>Your Notes</h1>
-                <div class="inner-box">
-                    <p class="display-none" style="color: red;">You have not added a note yet.</p>
-                </div>
-            </div>
+      <h1 class="main-heading">Welcome to Sticky notes app</h1>
+      <div class="content">
+        <div id="left-container">
+          <div class="textarea-and-color">
+            <textarea
+              id="textarea"
+              cols="45"
+              rows="8"
+              placeholder="Add your notes here..."
+            ></textarea>
+            <input type="color" id="color-picker" />
+          </div>
+          <button class="add-notes-btn">Add Notes</button>
         </div>
+        <div id="right-container">
+          <h1>Your Notes</h1>
+          <div class="inner-box">
+            <p class="display-none" style="color: red">
+              You have not added a note yet.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
