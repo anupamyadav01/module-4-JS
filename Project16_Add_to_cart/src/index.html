@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
+  <body>
+    <div class="bg-bgcolor text-center w-full h-screen text-white">
+      <!-- first div  -->
+      <div
+        class="w-8/12 relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      >
+        <!-- second div  -->
+        <div class="bg-product flex">
+          <div class="p-4 h-2/3 w-1/2">
+            <h2 class="text-4xl font-semibold mb-4">Products</h2>
+            <div
+              id="product-list"
+              class="flex flex-col gap-4 p-4 text-xl"
+            ></div>
+          </div>
+
+          <div class="k p-4 h-2/3 w-1/2">
+            <h2 class="text-4xl font-semibold mb-4">Cart</h2>
+            <div id="cart-items">No Product added to the cart</div>
+            <div>Total Price: <span id="total-price">0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
