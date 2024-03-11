@@ -1,22 +1,76 @@
-const hourEl = document.getElementById("hourel");
-const minutesEl = document.getElementById("minuteel");
-const secondsEl = document.getElementById("secondel");
+const startbtn = document.querySelector("#start");
+const pausebtn = document.querySelector("#pause");
+const resetbtn = document.querySelector("#reset");
 
-// getting buttons 
-const startbtn = document.getElementById("start_btn");
-const stopbtn = document.getElementById("stop_btn");
-const resetbtn = document.getElementById("reset_btn");
-const lapbtn = document.getElementById("lap_btn");
-
+let hourEl = document.querySelector("#hour");
+let minuteEl = document.querySelector("#minute");
+let secondEl = document.querySelector("#second");
+let miliSecondsEl = document.querySelector("#milisecond");
 
 
-setInterval(function () {
-    const currentDate = new Date();
-    let hours = currentDate.getHours();
-    let minutes = currentDate.getMinutes();
-    let seconds = currentDate.getSeconds();
+let hour = 0;
+let minute = 0;
+let second = 0;
+let count = 0;
 
-    hourEl.innerText = hours;
-    minutesEl.innerText = minutes;
-    secondsEl.innerText = seconds;
-}, 1000);
+let timer = null;
+
+function startTimer() {
+    if (!timer) {
+        timer = true;
+        stopWatch();
+    }
+}
+
+function stopTimer() {
+    timer = false;
+    stopWatch();
+}
+
+function resetTimer() {
+    timer = null;
+    stopWatch();
+}
+let id;
+function stopWatch() {
+    if (timer) {
+        id = setInterval(() => {
+            count += 1;
+            if (count == 100) {
+                count = 0;
+                second += 1;
+                if (second == 60) {
+                    second = 0;
+                    minute += 1;
+                    if (minute == 60) {
+                        minute = 0;
+                        hour += 1;
+                    }
+                }
+            }
+
+
+            hourEl.innerHTML = hour < 10 ? "0" + hour : hourEl;
+            minuteEl.innerHTML = minute < 10 ? "0" + minute : minute;
+            secondEl.innerHTML = second < 10 ? "0" + second : second;
+            miliSecondsEl.innerHTML = count < 10 ? "0" + count : count;
+
+        }, 10);
+    } else if (timer == false) {
+        clearInterval(id);
+    } else if (timer == null) {
+        hour = 0;
+        minute = 0;
+        second = 0;
+        count = 0;
+        clearInterval(id);
+        hourEl.innerHTML = "00";
+        minuteEl.innerHTML = "00";
+        secondEl.innerHTML = "00";
+        miliSecondsEl.innerHTML = "00";
+    }
+}
+
+startbtn.addEventListener("click", startTimer);
+pausebtn.addEventListener("click", stopTimer);
+resetbtn.addEventListener("click", resetTimer);

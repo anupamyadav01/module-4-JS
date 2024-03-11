@@ -2,55 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #0e2954;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .stopwatch {
-  background-color: rgb(9, 33, 51);
-  color: white;
-  padding: 3rem;
-  border-radius: 10px;
-}
-.inner-container {
+  background-color: #28156c;
   width: 100%;
-  background-color: #1f6e8c;
-  padding: 2rem;
-  border-radius: 10px;
+  height: 100vh;
+  color: #fff;
 }
-.timer {
+.container {
+  font-size: 6rem;
+  font-weight: 500;
+  width: 800px;
+  height: 300px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  font-family: sans-serif;
-  margin-bottom: 2rem;
-}
-.time-box {
-  font-size: 5rem;
-}
-.hour,
-.minutes,
-.seconds {
-  padding: 1rem;
-  margin: 10px;
-  text-align: center;
-  border: 2px solid #000000;
+  justify-content: center;
+  background-color: rgba(235, 0, 255, 0.11);
+  backdrop-filter: blur(40px);
   border-radius: 10px;
 }
-.buttons {
-  gap: 14px;
+.container::after {
+  content: "";
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  background-color: #f41b75;
+  z-index: -1;
+}
+
+.container::before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  right: -30px;
+  bottom: -50px;
+  border-radius: 50%;
+  background-color: #419aff;
+  z-index: -1;
+}
+.timer-contanier {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
+  text-align: center;
   justify-content: center;
 }
-.buttons button {
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+.clock span {
+  position: relative;
+}
+#hour,
+#minute,
+#second,
+#milisecond {
+  width: 130px;
+}
+.clock span::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+#hour::after {
+  content: "HOURS";
+}
+#minute::after {
+  content: "MINUTES";
+}
+#second::after {
+  content: "SECONDS";
+}
+#milisecond::after {
+  content: "MILISECONDS";
+}
+
+#start,
+#pause,
+#reset {
+  padding: 10px 20px;
+  font-size: 18px;
   border: none;
+  border-radius: 3px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.3);
 }
