@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.stopwatch {
+  background-color: #28156c;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
+.container {
+  font-weight: 500;
+  max-width: 900px;
+  min-height: 500px;
+  height: 500px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: filter 0.8s ease-in-out;
+}
+.clock {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(235, 0, 255, 0.11);
+  backdrop-filter: blur(40px);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.container::after {
+  content: "";
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  background-color: #f41b75;
+  z-index: -1;
+}
+
+.container::before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  right: -30px;
+  bottom: -50px;
+  border-radius: 50%;
+  background-color: #419aff;
+  z-index: -1;
+}
+table {
+  margin-top: 20px;
+  width: 100%;
+}
+td.edit-btns {
+  margin-right: 10px;
+  font-size: 1.4rem;
+}
+tbody tr {
+  color: rgb(242, 242, 242);
+  height: 50px;
+}
+table > thead > tr {
+  font-size: 1.5rem;
+  color: rgb(226, 226, 226);
+  font-weight: 400;
+}
+#delete-icon {
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 1.6rem;
+}
+
+/* form styling  */
+div.form {
+  width: 400px;
+  height: 430px;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: #9ea3aa;
+  position: fixed;
+  transition: all 0.7s ease-in-out;
+  top: -70%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 2px solid white;
+  border-radius: 5px;
+  opacity: 0;
+}
+.main-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+.form-heading {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border: none;
+}
+button.add-player-btn {
+  /* margin-top: 1rem; */
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  /* margin-left: 1.4rem; */
+}
+button.add-player-btn:hover {
+  cursor: pointer;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.add-btn:hover {
+  background: green;
+  color: white;
+}
+
+.close-btn:hover {
+  background: red;
+  color: white;
+}
+.add-btn {
+  margin-right: 1rem;
+}
+
+.active.container {
+  filter: blur(5px) brightness(0.6);
+}
+.top-bar {
+  margin-bottom: 1.5rem;
+}
+.edit-btns > span {
+  margin-right: 13px;
+}
+.plus-five {
+  color: rgb(87, 244, 87);
+  cursor: pointer;
+}
+.minus-five {
+  color: rgb(255, 67, 67);
+  cursor: pointer;
+}
+.delete-icon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.delete-icon:active {
+  color: rgb(110, 110, 110);
+}
+#button:active {
+  background: rgb(110, 110, 110);
+}
