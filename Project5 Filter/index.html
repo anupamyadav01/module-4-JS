@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <h1 style="text-align: center;">Filter</h1>
+    <div class="container">
+        <select name="" id="category-filter" style="display: flex;">
+            <option value="All">All</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Moto">Moto</option>
+            <option value="Mi">Mi</option>
+        </select>
+
+        <div id="product-list">
+            <div class="product" data-category="Samsung">
+                <h3>Samsung</h3>
+                <p>Price: $12000</p>
+            </div>
+            <div class="product" data-category="Apple">
+                <h3>Apple</h3>
+                <p>Price: $120000</p>
+            </div>
+            <div class="product" data-category="Moto">
+                <h3>Moto</h3>
+                <p>Price: $1200</p>
+            </div>
+            <div class="product" data-category="Mi">
+                <h3>Mi</h3>
+                <p>Price: $10</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
