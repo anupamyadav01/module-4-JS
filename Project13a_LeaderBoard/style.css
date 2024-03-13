@@ -121,15 +121,16 @@ select {
 }
 
 button.add-player-btn {
-  /* margin-top: 1rem; */
   padding: 10px 15px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  /* margin-left: 1.4rem; */
+  transition: all 0.2s ease-in-out;
 }
 button.add-player-btn:hover {
   cursor: pointer;
+  background-color: rgb(202, 202, 202);
+  transform: scale(1.1);
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
