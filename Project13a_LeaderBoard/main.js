@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const data = [
         {
-            firstName: "Yashasvi",
-            lastName: "Jaiswal",
-            country: "India",
+            firstName: "AB de ",
+            lastName: "Villiers",
+            country: "South Africa",
             score: 95
         },
         {
@@ -48,22 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         tableBody.innerHTML = playersHTML;
 
-        // Attach event listeners for edit buttons
         const editBtns = document.querySelectorAll(".edit-btns");
-        console.log(editBtns);
         editBtns.forEach((editBtn, index) => {
             editBtn.addEventListener("click", (e) => {
                 const target = e.target;
                 if (target.classList.contains("fa-trash")) {
-                    // Handle delete button click
                     data.splice(index, 1);
                     displayData();
                 } else if (target.classList.contains("plus-five")) {
-                    // Handle +5 button click
                     data[index].score += 5;
                     displayData();
                 } else if (target.classList.contains("minus-five")) {
-                    // Handle -5 button click
                     data[index].score -= 5;
                     displayData();
                 }
@@ -97,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function clearForm() {
         document.getElementById("first-name").value = "";
         document.getElementById("last-name").value = "";
-        document.getElementById("country").value = "";
+        document.getElementById("selectYourCountry").value = "Select your country";
         document.getElementById("score").value = "";
     }
 
@@ -107,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const firstName = document.getElementById("first-name").value;
         const lastName = document.getElementById("last-name").value;
-        const country = document.getElementById("country").value;
+        const country = document.getElementById("selectYourCountry").value;
         const score = parseInt(document.getElementById("score").value);
 
         if (!firstName || !lastName || !country || isNaN(score)) {
