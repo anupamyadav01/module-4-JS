@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="icon"
+      href="https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png"
+      type="image/png"
+    />
+
+    <title>Gemini</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <style>
+    #results::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
+  <body>
+    <!-- wrapper container  -->
+    <div class="h-screen w-full bg-mycolors-mainBg">
+      <div class="flex h-full">
+        <!-- left side bar  -->
+        <div
+          class="flex w-[70px] flex-col items-center justify-between bg-mycolors-inputBoxBg pb-10 pt-7 text-white"
+        >
+          <div class="flex flex-col items-center justify-between gap-16">
+            <i class="fa-solid fa-bars text-lg"></i>
+            <span
+              class="material-symbols-outlined flex h-8 w-8 items-center justify-center rounded-full bg-mycolors-mainBg p-4 text-xl"
+            >
+              add
+            </span>
+          </div>
+
+          <!-- bottom icons  -->
+          <div class="flex flex-col items-center gap-2">
+            <span class="material-symbols-outlined text-lg"> help </span>
+            <span class="material-symbols-outlined text-lg"> history </span>
+            <span class="material-symbols-outlined text-lg"> settings </span>
+          </div>
+        </div>
+
+        <main class="relative w-full pl-6 pr-4">
+          <nav class="mt-4 flex w-full items-center justify-between text-white">
+            <!-- name  -->
+            <div class="relative text-xl">
+              Gemini
+              <span
+                class="material-symbols-outlined absolute bottom-0 text-2xl leading-none"
+              >
+                arrow_drop_down
+              </span>
+            </div>
+
+            <!-- user logo  -->
+            <div>
+              <div>
+                <img
+                  class="rounded-full"
+                  src="https://lh3.googleusercontent.com/ogw/AF2bZyi4wH00Sw1bkinlXVBXk3rQkOwkBiS-2KZLZl8bQw=s32-c-mo"
+                  alt=""
+                />
+              </div>
+            </div>
+          </nav>
+          <!-- navbar completed here  -->
+
+          <!-- heading and prompts section  -->
+          <section class="mx-auto mt-10 hidden w-[68%]" id="main-section">
+            <!-- hero heading  -->
+            <div
+              class="mb-20 text-[56px] font-medium tracking-tight text-white"
+            >
+              <h1
+                class="text-6xl font-semibold tracking-tighter"
+                style="
+                  background: #5082ee;
+                  background: linear-gradient(
+                    to right,
+                    #5082ee 0%,
+                    #a66fba 50%,
+                    #d66675 100%
+                  );
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                "
+              >
+                Hello, Anupam
+              </h1>
+              <h1 class="leading-tight text-[#444745]">
+                How can I help you today?
+              </h1>
+            </div>
+
+            <!-- prompts container  -->
+            <div class="flex w-full gap-2">
+              <div
+                class="h-promptheight w-promptbox cursor-pointer rounded-xl bg-mycolors-inputBoxBg p-3 text-mycolors-lightFont hover:bg-mycolors-prompthover"
+              >
+                <p>Give me a beginner's guide to an activity</p>
+              </div>
+              <div
+                class="h-promptheight w-promptbox cursor-pointer rounded-xl bg-mycolors-inputBoxBg p-3 text-mycolors-lightFont hover:bg-mycolors-prompthover"
+              >
+                <p>
+                  Suggest an organized list of the best food spots in a city
+                </p>
+              </div>
+              <div
+                class="h-promptheight w-promptbox cursor-pointer rounded-xl bg-mycolors-inputBoxBg p-3 text-mycolors-lightFont hover:bg-mycolors-prompthover"
+              >
+                <p>Draft an email to a recruiter to accept a job offer</p>
+              </div>
+              <div
+                class="h-promptheight w-promptbox cursor-pointer rounded-xl bg-mycolors-inputBoxBg p-3 text-mycolors-lightFont hover:bg-mycolors-prompthover"
+              >
+                <p>Explain the key rules of rugby, starting with the basics</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- chats section   -->
+          <div
+            class="mx-auto h-3/4 w-[60%] overflow-scroll bg-gray-500 px-4 pt-5 text-white"
+            id="results"
+          >
+            <!-- user input  -->
+            <div
+              id="chats"
+              class="mb-16 flex items-start rounded-md bg-red-400"
+            >
+              <span class="mr-4">
+                <img
+                  class="rounded-full"
+                  src="https://lh3.googleusercontent.com/ogw/AF2bZyi4wH00Sw1bkinlXVBXk3rQkOwkBiS-2KZLZl8bQw=s32-c-mo"
+                  alt=""
+                />
+              </span>
+              <span id="user-msg">hii</span>
+            </div>
+          </div>
+
+          <!-- input section  -->
+          <div class="fixed bottom-0 w-[90%]">
+            <section
+              class="mx-auto mt-[19px] flex w-[68%] rounded-full bg-mycolors-inputBoxBg text-white"
+            >
+              <input
+                class="bg w-full rounded-full bg-mycolors-inputBoxBg py-4 pl-4 outline-none"
+                type="text"
+                name="user-question"
+                id="user-query"
+                placeholder="Enter a prompt here"
+              />
+
+              <span
+                class="flex items-center gap-3 rounded-full bg-mycolors-inputBoxBg pr-4"
+              >
+                <span class="material-symbols-outlined">
+                  add_photo_alternate
+                </span>
+                <span
+                  class="material-symbols-outlined cursor-pointer"
+                  id="search-btn"
+                >
+                  mic
+                </span>
+                <span class="material-symbols-outlined hidden" id="send-icon">
+                  send
+                </span>
+              </span>
+            </section>
+
+            <!-- footer section  -->
+            <footer class="mx-auto mt-3 w-[68%] text-center text-xs text-white">
+              <p>
+                Gemini may display inaccurate info, including about people, so
+                double-check its responses.
+                <a href="#">Your privacy and Gemini Apps</a>
+              </p>
+            </footer>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/fe1650bc18.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+      const API_KEY = "AIzaSyDzbwiZpbyPx5MDUwbVutteQKt9_wnwDYo";
+      // Access your API key (see "Set up your API key" above)
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      // document.querySelector("#search-btn").addEventListener("click", () => {});
+
+      // to show enter btn
+      let showEnterBtn = () => {
+        let userQuery = document.querySelector("#user-query").value;
+        if (userQuery.length !== 0) {
+          document.querySelector("#send-icon").classList.remove("hidden");
+          return;
+          document.querySelector("#send-icon").addEventListener("click", () => {
+            console.log("clicked ");
+          });
+        } else {
+          document.querySelector("#send-icon").classList.add("hidden");
+        }
+      };
+
+      document
+        .querySelector("#user-query")
+        .addEventListener("input", showEnterBtn);
+
+      async function run() {
+        // For text-only input, use the gemini-pro model
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+        let userQuery = document.querySelector("#user-query").value;
+        let resultContainer = document.querySelector("#results");
+        let singleChats = document.createElement("div");
+
+        let userimage =
+          "https://lh3.googleusercontent.com/ogw/AF2bZyi4wH00Sw1bkinlXVBXk3rQkOwkBiS-2KZLZl8bQw=s32-c-mo";
+        // let userThings = `
+        // <div class="mb-16 flex items-start rounded-md bg-red-400">
+        //       <span class="mr-4">
+        //         <img
+        //           class="rounded-full"
+        //           src="${userimage}"
+        //           alt=""
+        //         />
+        //       </span>
+        //       <span id="user-msg">${userQuery}</span>
+        //     </div>
+        // `;
+        // userQuery = "";
+        // console.log(userQuery);
+        // singleChats.innerHTML = userThings;
+        // resultContainer.appendChild(singleChats);
+
+        const prompt = userQuery;
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        console.log(text);
+      }
+
+      run();
+    </script>
+  </body>
+</html>
