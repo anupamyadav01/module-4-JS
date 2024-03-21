@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Save Text</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: gradientAnimation 3s linear infinite;
+      }
+
+      #container {
+        width: 80%;
+        max-width: 600px;
+        background: linear-gradient(45deg, #ff7300, #ff004d);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      #container:hover {
+        transform: translateY(-10px);
+      }
+
+      #textarea {
+        font-size: 1.4rem;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        resize: none;
+        transition: box-shadow 0.3s ease;
+      }
+
+      #textarea:focus {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background: linear-gradient(45deg, #676767, #ff004d);
+        }
+        50% {
+          background: linear-gradient(45deg, #ff004d, #ffff14);
+        }
+        100% {
+          background: linear-gradient(45deg, #ff7300, #00ff4c);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Auto Save Text</h1>
+      <textarea
+        id="textarea"
+        cols="50"
+        rows="15"
+        placeholder="Enter your message here..."
+      ></textarea>
+    </div>
+
+    <script>
+      const textArea = document.querySelector("#textarea");
+
+      let saveDataToLocalStorage = () => {
+        let data = textArea.value;
+        localStorage.setItem("userData", data);
+      };
+
+      textArea.addEventListener("input", saveDataToLocalStorage);
+
+      // Retrieve data from localStorage on page load
+      window.addEventListener("load", () => {
+        const savedData = localStorage.getItem("userData");
+        if (savedData) {
+          textArea.value = savedData;
+        }
+      });
+    </script>
+  </body>
+</html>
