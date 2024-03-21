@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <link rel="shortcut icon" href="fevicon1.png" type="image/x-icon" />
+    <style>
+      /* CSS */
+      .Filter_by_type_Btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 14px;
+        font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+        border-radius: 6px;
+        border: none;
+
+        color: #fff;
+        background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
+        background-origin: border-box;
+        box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+          inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .Reset {
+        padding: 6px 14px;
+        border-radius: 6px;
+        border: 1px solid #000;
+        transition: background 0.3s;
+      }
+
+      .Reset:hover {
+        cursor: pointer;
+        background: rgb(234, 234, 234);
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body class="scroll-smooth bg-white">
+    <header class="w-full flex flex-col items-center">
+      <div class="flex items-center gap-0 sm:-ml-[80px]">
+        <img class="hidden sm:block" src="giphy.gif" />
+        <img src="pokemon.png" class="drop-shadow-2xl w-[300px]" alt="" />
+        <img class="h-[100px]" src="ash.webp" alt="" srcset="" />
+      </div>
+      <div class="flex flex-wrap justify-center gap-5 mt-[10px]">
+        <select
+          id="select"
+          class="capitalize outline-none px-1 border-[1px] border-black rounded-lg focus:border-[1.5px]"
+          name=""
+          id=""
+        >
+          <option value="">Select</option>
+          <option value="grass">grass</option>
+          <option value="fire">fire</option>
+          <option value="water">water</option>
+          <option value="bug">bug</option>
+          <option value="normal">normal</option>
+          <option value="poison">poison</option>
+          <option value="electric">electric</option>
+          <option value="ground">ground</option>
+          <option value="fairy">fairy</option>
+          <option value="fighting">fighting</option>
+          <option value="psychic">psychic</option>
+          <option value="rock">rock</option>
+          <option value="ghost">ghost</option>
+          <option value="ice">ice</option>
+          <option value="dragon">dragon</option>
+        </select>
+        <button
+          id="Filter_by_type_Btn"
+          class="Filter_by_type_Btn"
+          role="button"
+        >
+          Filter by type
+        </button>
+
+        <input
+          class="px-4 rounded-lg border-[1px] border-black outline-none focus:border-[1.5px] rouded"
+          type="text"
+          name=""
+          id="searchBox"
+          placeholder="Search Pokemon"
+        />
+        <button id="reset" class="Reset" role="button">Reset</button>
+      </div>
+    </header>
+    <div
+      id="card_container"
+      class="mt-[20px] w-full py-5 px-10 flex flex-wrap gap-10 justify-center"
+    ></div>
+  </body>
+</html>
